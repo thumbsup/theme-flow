@@ -26,5 +26,5 @@ thumbsup --input /photos --output ./tmp --theme-path ./theme
 Publishing the theme:
 
 ```bash
-npm publish
+npm publish --access=public
 ```
