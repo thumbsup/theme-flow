@@ -1,5 +1,7 @@
 # @thumbsup/theme-cards
 
+[![Travis CI](https://travis-ci.org/thumbsup/theme-cards.svg?branch=master)](https://travis-ci.org/thumbsup/theme-cards)
+
 One of the built-in themes for https://github.com/thumbsup/thumbsup.
 
 ---
