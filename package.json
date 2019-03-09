@@ -1,16 +1,16 @@
 {
-  "name": "@thumbsup/theme-cards",
+  "name": "@thumbsup/theme-flow",
   "version": "1.1.0",
-  "description": "Thumbsup cards theme",
+  "description": "Thumbsup flow theme",
   "author": "Thumbsup",
   "license": "MIT",
-  "homepage": "https://github.com/thumbsup/theme-cards#readme",
+  "homepage": "https://github.com/thumbsup/theme-flow#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thumbsup/theme-cards.git"
+    "url": "git+https://github.com/thumbsup/theme-flow.git"
   },
   "bugs": {
-    "url": "https://github.com/thumbsup/theme-cards/issues"
+    "url": "https://github.com/thumbsup/theme-flow/issues"
   },
   "thumbsup": {
     "themeRoot": "theme"

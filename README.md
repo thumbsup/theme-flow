@@ -1,7 +1,7 @@
-# @thumbsup/theme-cards
+# @thumbsup/theme-flow
 
-[![NPM](https://img.shields.io/npm/v/@thumbsup/theme-cards.svg?style=flat)](https://www.npmjs.com/package/@thumbsup/theme-cards)
-[![Travis CI](https://travis-ci.org/thumbsup/theme-cards.svg?branch=master)](https://travis-ci.org/thumbsup/theme-cards)
+[![NPM](https://img.shields.io/npm/v/@thumbsup/theme-flow.svg?style=flat)](https://www.npmjs.com/package/@thumbsup/theme-flow)
+[![Travis CI](https://travis-ci.org/thumbsup/theme-flow.svg?branch=master)](https://travis-ci.org/thumbsup/theme-flow)
 
 One of the built-in themes for https://github.com/thumbsup/thumbsup.
 
@@ -10,7 +10,7 @@ One of the built-in themes for https://github.com/thumbsup/thumbsup.
 ## Usage
 
 ```bash
-thumbsup --theme cards
+thumbsup --theme flow
 ```
 
 ## Screenshots
