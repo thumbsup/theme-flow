@@ -23,7 +23,8 @@
   -->
   <div id="albums">
     {{#each album.albums~}}
-      <a href="{{relative url}}" style="background-image: url('{{relative previews.0.urls.large}}')">
+      <a href="{{relative url}}">
+        <img src="{{relative previews.0.urls.large}}" alt="">
         <div class="info">
           <h3>{{title}}</h3>
           <div class="summary">{{summary}}</div>
