@@ -44,37 +44,19 @@
         });
 
         // Init justified gallery for albums
-        /*
-        var albumFirstLoad = true;
         $("#albums").justifiedGallery({
           {{!-- selector: '.albumList', --}}
           margins: 10,
-          waitThumbnailsLoad: true,
           rowHeight: 300,
-          maxRowHeight: 350,
-        }).on('jg.complete', e => {
-          // Not quite sure why this 2nd pass is needed to fix a bug :(
-          if (albumFirstLoad) {
-            albumFirstLoad = false;
-            setTimeout(() => { $("#media").justifiedGallery(); }, 100);
-          }
+          maxRowHeight: 325,
         });
-        */
 
         // Init justified gallery for photos
-        var mediaFirstLoad = true;
         $("#media").justifiedGallery({
           selector: '.albumList',
           margins: 10,
-          waitThumbnailsLoad: true,
           rowHeight: 250,
-          maxRowHeight: 300,
-        }).on('jg.complete', e => {
-          // Not quite sure why this 2nd pass is needed to fix a bug :(
-          if (mediaFirstLoad) {
-            mediaFirstLoad = false;
-            setTimeout(() => { $("#media").justifiedGallery(); }, 100);
-          }
+          maxRowHeight: 275,
         });
       });
     </script>
