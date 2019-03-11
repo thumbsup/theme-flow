@@ -21,11 +21,11 @@
   <!--
     Nested albums, if any
   -->
-  <div id="albums">
+  <div id="albums" class="justified-gallery">
     {{#each album.albums~}}
       <a href="{{relative url}}">
-        <img src="{{relative previews.0.urls.large}}" alt="">
-        <div class="info">
+        <img src="{{relative previews.0.urls.small}}" alt="">
+        <div class="caption" style="display: inline-block">
           <h3>{{title}}</h3>
           <div class="summary">{{summary}}</div>
           <div class="date">{{{date stats.fromDate}}} - {{{date stats.toDate}}}</div>
@@ -37,7 +37,7 @@
   <!--
     All photos and videos
   -->
-  <ul id="media" class="clearfix">
+  <ul id="media" class="clearfix justified-gallery">
     {{#each album.files~}}
       {{> thumbnail}}
     {{~/each}}
