@@ -134,19 +134,23 @@ nav.breadcrumbs a {
   display: inline-block;
   margin-right: 2em;
   margin-bottom: 3em;
-  position: relative;
+  // position: relative;
   overflow: hidden;
-  width: 300px;
-  height: 220px;
+  // width: 300px;
+  // height: 220px;
   background-size: cover;
-  border-radius: 8px;
+  // border-radius: 8px;
+}
+
+#albums img {
+  height: 300px;
 }
 
 #albums .info {
-  position: absolute;
-  padding: 1em;
-  background: rgba(0,0,0,0.3);
-  color: #fff;
+  // position: absolute;
+  padding-top: 1em;
+  // background: rgba(0,0,0,0.3);
+  color: @header-foreground;
   font-size: 0.9em;
   line-height: 1.2em;
   margin: 0;
@@ -164,24 +168,21 @@ nav.breadcrumbs a {
 // Photo and video thumbnails
 // -----------------------------------
 
-#media li {
-  float: left;
-  margin-right: 0.4em;
-  margin-bottom: 0.2em;
-  position: relative;
+.albumList, .albumList img {
+  display: inline-block;
+  // border-radius: 8px;
+}
+
+.albumList img {
+  height: 225px;
+  margin: 1px;
+}
+
+.albumList, .albumList img {
   cursor: zoom-in;
 }
 
-#media a {
-  display: inline-block;
-}
-
-#media img {
-  border-radius: 8px;
-  display: block;
-}
-
-#media li .video-overlay {
+.video-overlay img {
   left: 50%;
   height: 48px;
   margin-left: -24px;
@@ -189,15 +190,4 @@ nav.breadcrumbs a {
   position: absolute;
   top: 50%;
   width: 48px;
-}
-
-// -----------------------------------
-// Photo and video thumbnails
-// -----------------------------------
-
-@media only screen and (max-width: @mobile-trigger) {
-  #albums a {
-    width: 250px;
-    height: 190px;
-  }
 }

@@ -1,0 +1,48 @@
+{{!--
+  Image/Video thumbnails
+--}}
+
+<div class="albumList"
+    data-sub-html="{{meta.caption}}"
+    data-download-url="{{relative urls.download}}"
+
+    {{~#if isVideo~}}
+        data-html="#media{{id}}"
+    {{~else~}}
+        data-src="{{relative urls.large}}"
+    {{~/if~}}
+    
+    data-exthumbimage="{{relative urls.thumbnail}}"
+    data-filename="{{filename}}"
+
+    {{#if meta.exif}}
+        data-datetimeoriginal="{{meta.exif.DateTimeOriginal}}"
+        data-fnumber="{{meta.exif.FNumber}}"
+        data-exposuretime="{{meta.exif.ExposureTime}}"
+        data-isospeedratings="{{meta.exif.ISO}}"
+        data-focallength="{{meta.exif.FocalLength}}"
+        data-lens="{{meta.exif.Lens}}"
+        data-model="{{meta.exif.Model}}"
+        data-make="{{meta.exif.Make}}"
+        data-gpslatitude="{{meta.exif.GPSLatitude}}"
+        data-gpslongitude="{{meta.exif.GPSLongitude}}"
+        data-gpslatituderef="{{meta.exif.GPSLatitudeRef}}"
+        data-gpslongituderef="{{meta.exif.GPSLongitudeRef}}"
+        data-gpsaltitude="{{meta.exif.GPSAltitude}}"
+    {{/if}}
+>
+
+    {{~#if isVideo~}}
+    <a href="{{relative urls.download}}">
+    {{~else~}}
+    <a href="{{relative urls.large}}">
+    {{~/if~}}
+        <img src="{{relative urls.small}}" alt="{{filename}}" />
+    </a>
+
+    {{#compare meta.animated "||" isVideo}}
+        <div class="video-overlay">
+            <img src="{{relative 'public/play.png'}}" />
+        </div>
+    {{/compare}}
+</div>

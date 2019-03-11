@@ -10,6 +10,7 @@
       <link rel="stylesheet" href="{{relative 'public/lightgallery/css/lg-exif.min.css'}}" />
       <link rel="stylesheet" href="{{relative 'public/core.css'}}" />
       <link rel="stylesheet" href="{{relative 'public/theme.css'}}" />
+      <link rel="stylesheet" href="{{relative 'public/justifiedgallery/justifiedGallery.min.css'}}" />
   </head>
 
   <body>
@@ -28,6 +29,7 @@
     <script src="{{relative 'public/lightgallery/js/lg-thumbnail.js'}}"></script>
     <script src="{{relative 'public/lightgallery/js/lg-video.js'}}"></script>
     <script src="{{relative 'public/lightgallery/js/lg-exif.min.js'}}"></script>
+    <script src="{{relative 'public/justifiedgallery/jquery.justifiedGallery.min.js'}}"></script>
 
     <script>
       $(document).ready(function() {
@@ -37,7 +39,42 @@
           loop : false,
           download: true,
           counter: true,
-          videojs: true
+          videojs: true,
+          exThumbImage: 'data-exthumbimage',
+        });
+
+        // Init justified gallery for albums
+        /*
+        var albumFirstLoad = true;
+        $("#albums").justifiedGallery({
+          {{!-- selector: '.albumList', --}}
+          margins: 10,
+          waitThumbnailsLoad: true,
+          rowHeight: 300,
+          maxRowHeight: 350,
+        }).on('jg.complete', e => {
+          // Not quite sure why this 2nd pass is needed to fix a bug :(
+          if (albumFirstLoad) {
+            albumFirstLoad = false;
+            setTimeout(() => { $("#media").justifiedGallery(); }, 100);
+          }
+        });
+        */
+
+        // Init justified gallery for photos
+        var mediaFirstLoad = true;
+        $("#media").justifiedGallery({
+          selector: '.albumList',
+          margins: 10,
+          waitThumbnailsLoad: true,
+          rowHeight: 250,
+          maxRowHeight: 300,
+        }).on('jg.complete', e => {
+          // Not quite sure why this 2nd pass is needed to fix a bug :(
+          if (mediaFirstLoad) {
+            mediaFirstLoad = false;
+            setTimeout(() => { $("#media").justifiedGallery(); }, 100);
+          }
         });
       });
     </script>
