@@ -13,6 +13,12 @@ One of the built-in themes for https://github.com/thumbsup/thumbsup.
 thumbsup --theme flow
 ```
 
+## Theme options
+
+- The `featuredAlbum` option will show the album with the specified name (if it exists)
+as a slider at the top of the gallery homepage instead of listing it as a normal album.
+This album must be top-level, and any sub-albums will be ignored.
+
 ## Screenshots
 
 ![albums](docs/albums.png)

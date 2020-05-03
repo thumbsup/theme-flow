@@ -6,6 +6,7 @@
       <meta name="viewport" content="width=device-width, user-scalable=no" />
       <title>{{gallery.title}} - {{album.title}}</title>
       <link rel="stylesheet" href="{{relative 'public/lightgallery/css/lightgallery.css'}}" />
+      <link rel="stylesheet" href="{{relative 'public/lightslider/css/lightslider.min.css'}}" />
       <link rel="stylesheet" href="{{relative 'public/videojs/video-js.min.css'}}" />
       <link rel="stylesheet" href="{{relative 'public/lightgallery/css/lg-exif.min.css'}}" />
       <link rel="stylesheet" href="{{relative 'public/core.css'}}" />
@@ -14,7 +15,6 @@
   </head>
 
   <body>
-
     {{> content}}
     {{> video-loader}}
 
@@ -24,6 +24,7 @@
     <script src="{{relative 'public/videojs/video.min.js'}}"></script>
     <!-- LightGallery -->
     <script src="{{relative 'public/lightgallery/js/lightgallery.js'}}"></script>
+    <script src="{{relative 'public/lightslider/js/lightslider.min.js'}}"></script>
     <script src="{{relative 'public/lightgallery/js/lg-autoplay.js'}}"></script>
     <script src="{{relative 'public/lightgallery/js/lg-pager.js'}}"></script>
     <script src="{{relative 'public/lightgallery/js/lg-thumbnail.js'}}"></script>
@@ -60,6 +61,24 @@
         });
       });
     </script>
+
+    {{#if album.home}}
+      <script>
+        $(document).ready(function () {
+          $("#lightSlider").lightSlider({
+            auto: true,
+            loop: true,
+            item: 1,
+            gallery: true,
+            onSliderLoad: (el) => {
+              el.lightGallery({
+                selector: "#lightSlider li"
+              })
+            }
+          });
+        });
+      </script>
+    {{/if}}
 
     {{> analytics}}
 
