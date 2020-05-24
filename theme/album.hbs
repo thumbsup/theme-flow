@@ -63,13 +63,22 @@
     </script>
 
     {{#if album.home}}
-      <script>
+      <script id="slider-js" data-interval="{{@root.settings.sliderInterval}}">
         $(document).ready(function () {
+          let waitTime = 1000;
+
+          try {
+            waitTime = parseInt($("#slider-js").data("interval"));
+          } catch (e) {
+            console.error("Invalid speed value for slider: " + waitTime + "\n" + e);
+          }
+
           $("#lightSlider").lightSlider({
             auto: true,
             loop: true,
             item: 1,
             gallery: true,
+            pause: waitTime,
             onSliderLoad: (el) => {
               el.lightGallery({
                 selector: "#lightSlider li"

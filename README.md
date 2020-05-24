@@ -20,6 +20,8 @@ as a slider at the top of the gallery homepage instead of listing it as a normal
 This album must be top-level, and any sub-albums will be ignored.
 The height of this slider defaults to 400px, but can be overridden
 by setting the `@slider-height` LESS variable.
+- The `sliderInterval` option is an integer representing the number of
+milliseconds to wait between slides. The default is 1000 (1 second).  
 
 ## Screenshots
 
