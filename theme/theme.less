@@ -9,6 +9,7 @@
 @text-color: #444;
 @borders: #ddd;
 @mobile-trigger: 400px;
+@slider-height: 400px;
 
 // -----------------------------------
 // Generic styles
@@ -172,7 +173,8 @@ nav.breadcrumbs a {
 // -----------------------------------
 
 #lightSlider {
-  max-height: 400px;
+  max-height: @slider-height;
+  min-height: @slider-height;
 }
 
 #lightSlider li {
