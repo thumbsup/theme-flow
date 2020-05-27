@@ -22,6 +22,7 @@ The height of this slider defaults to 400px, but can be overridden
 by setting the `@slider-height` LESS variable.
 - The `sliderInterval` option is an integer representing the number of
 milliseconds to wait between slides. The default is 1000 (1 second).  
+- The `hideExtension` option will display media filenames without the file extension.
 
 ## Screenshots
 

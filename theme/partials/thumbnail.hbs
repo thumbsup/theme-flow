@@ -13,7 +13,11 @@
     {{~/if~}}
     
     data-exthumbimage="{{relative urls.thumbnail}}"
-    data-filename="{{filename}}"
+    {{~#if @root.settings.hideExtension~}}
+        data-filename="{{remove_extension filename}}"
+    {{~else~}}
+        data-filename="{{filename}}"
+    {{~/if~}}
 
     {{#if meta.exif}}
         data-datetimeoriginal="{{meta.exif.DateTimeOriginal}}"
@@ -37,7 +41,13 @@
     {{~else~}}
     <a href="{{relative urls.large}}">
     {{~/if~}}
-        <img src="{{relative urls.small}}" alt="{{filename}}" />
+        <img src="{{relative urls.small}}"
+          {{~#if @root.settings.hideExtension~}}
+              alt="{{remove_extension filename}}"
+          {{~else~}}
+              alt="{{filename}}"
+          {{~/if~}}
+        />
     </a>
 
     {{#compare meta.animated "||" isVideo}}
