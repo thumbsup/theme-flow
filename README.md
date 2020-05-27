@@ -13,6 +13,10 @@ One of the built-in themes for https://github.com/thumbsup/thumbsup.
 thumbsup --theme flow
 ```
 
+## Theme options
+
+- The `hideExtension` option will display media filenames without the file extension.
+
 ## Screenshots
 
 ![albums](docs/albums.png)
