@@ -18,18 +18,42 @@
     <a class="breadcrumb-item" href="{{relative album.url}}">{{album.title}}</a>
   </nav>
 
+  {{#if album.home}}
+    <!--
+      Featured album slider (on homepage only)
+    -->
+    <ul id="lightSlider">
+      {{! Find the featured album, if any !}}
+      {{#each album.albums~}}
+        {{#compare title '==' @root.settings.featuredAlbum}}
+          {{! Display its image files in the slider !}}
+          {{#each files~}}
+            {{#unless isVideo}}
+              <li data-thumb="{{relative urls.thumbnail}}" data-src="{{relative urls.large}}">
+                <img src="{{relative urls.large}}" alt="{{filename}}">
+              </li>
+            {{/unless}}
+          {{~/each}}
+        {{/compare}}
+      {{~/each}}
+    </ul>
+  {{/if}}
+
   <!--
     Nested albums, if any
   -->
   <div id="albums" class="justified-gallery">
     {{#each album.albums~}}
-      <a href="{{relative url}}">
-        <img src="{{relative previews.0.urls.small}}" alt="">
-        <div class="caption" style="display: inline-block">
-          <h3>{{title}}</h3>
-          <div class="summary">{{summary}}</div>
-        </div>
-      </a>
+      {{! Hide the featured album from listings !}}
+      {{#compare title '!=' @root.settings.featuredAlbum}}
+        <a href="{{relative url}}">
+          <img src="{{relative previews.0.urls.small}}" alt="">
+          <div class="caption" style="display: inline-block">
+            <h3>{{title}}</h3>
+            <div class="summary">{{summary}}</div>
+          </div>
+        </a>
+      {{/compare}}
     {{~/each}}
   </div>
 
