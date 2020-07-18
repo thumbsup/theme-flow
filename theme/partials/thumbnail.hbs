@@ -43,7 +43,7 @@
     {{~/if~}}
         <img
             src="{{relative urls.small}}"
-            width="{{multiply meta.width (aspect meta.width 300)}}"
+            width="{{multiply 300 (aspect meta.width meta.height)}}"
             height="300"
           {{~#if @root.settings.hideExtension~}}
               alt="{{remove_extension filename}}"
