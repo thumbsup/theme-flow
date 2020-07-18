@@ -11,7 +11,7 @@
     {{~else~}}
         data-src="{{relative urls.large}}"
     {{~/if~}}
-    
+
     data-exthumbimage="{{relative urls.thumbnail}}"
     {{~#if @root.settings.hideExtension~}}
         data-filename="{{remove_extension filename}}"
@@ -41,7 +41,10 @@
     {{~else~}}
     <a href="{{relative urls.large}}">
     {{~/if~}}
-        <img src="{{relative urls.small}}"
+        <img
+            src="{{relative urls.small}}"
+            width="{{multiply meta.width (aspect meta.width 300)}}"
+            height="300"
           {{~#if @root.settings.hideExtension~}}
               alt="{{remove_extension filename}}"
           {{~else~}}
