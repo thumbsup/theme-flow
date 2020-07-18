@@ -64,7 +64,12 @@
 
     {{#if album.home}}
       <script id="slider-js" data-interval="{{@root.settings.sliderInterval}}">
+        const rootAlbumName = "{{@root.settings.featuredAlbum}}";
         $(document).ready(function () {
+          if (!rootAlbumName) {
+            $('#lightSlider').remove();
+            return;
+          }
           let waitTime = 1000;
 
           try {
