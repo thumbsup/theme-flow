@@ -69,6 +69,31 @@
   </ul>
 
   <!--
+    Pagination
+  -->
+  {{#compare pagination.length '>' 1}}
+    <nav class="pagination">
+      Pages:
+      {{#each pagination}}
+        {{#if current}}
+          <a class="page current" href="{{relative url}}">{{index}}</a>
+        {{else}}
+          <a class="page" href="{{relative url}}">{{index}}</a>
+        {{/if}}
+      {{/each}}
+    </nav>
+  {{/compare}}
+
+  <!--
+    Zip file link
+  -->
+  {{#if album.zip}}
+    <div id="zip">
+      Download album as a <a href="{{album.zip}}">zip file</a>.
+    </div>
+  {{/if}}
+
+  <!--
     Optional footer
   -->
   {{#if gallery.footer}}
