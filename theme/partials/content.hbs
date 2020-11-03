@@ -18,6 +18,7 @@
     <a class="breadcrumb-item" href="{{relative album.url}}">{{album.title}}</a>
   </nav>
 
+  {{#if settings.featuredAlbum}}
   {{#if album.home}}
     <!--
       Featured album slider (on homepage only)
@@ -37,6 +38,7 @@
         {{/compare}}
       {{~/each}}
     </ul>
+  {{/if}}
   {{/if}}
 
   <!--
