@@ -23,13 +23,10 @@
     <!-- VideoJS -->
     <script src="{{relative 'public/videojs/video.min.js'}}"></script>
     <!-- LightGallery -->
-    <script src="{{relative 'public/lightgallery/js/lightgallery.js'}}"></script>
-    <script src="{{relative 'public/lightslider/js/lightslider.min.js'}}"></script>
-    <script src="{{relative 'public/lightgallery/js/lg-autoplay.js'}}"></script>
-    <script src="{{relative 'public/lightgallery/js/lg-pager.js'}}"></script>
-    <script src="{{relative 'public/lightgallery/js/lg-thumbnail.js'}}"></script>
-    <script src="{{relative 'public/lightgallery/js/lg-video.js'}}"></script>
+    <script src="{{relative 'public/lightgallery/js/lightgallery-all.min.js'}}"></script>
     <script src="{{relative 'public/lightgallery/js/lg-exif.min.js'}}"></script>
+    <!-- LightSlider + Justified Gallery -->
+    <script src="{{relative 'public/lightslider/js/lightslider.min.js'}}"></script>
     <script src="{{relative 'public/justifiedgallery/jquery.justifiedGallery.min.js'}}"></script>
 
     <script>
@@ -41,7 +38,9 @@
           download: true,
           counter: true,
           videojs: true,
-          exThumbImage: 'data-exthumbimage',
+          fullScreen: true,
+          zoom: true,
+          exThumbImage: 'data-exthumbimage'
         });
 
         // Init justified gallery for albums
